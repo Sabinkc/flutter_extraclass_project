@@ -32,7 +32,7 @@ class DashBoardScreen extends StatelessWidget {
           IconButton(onPressed: () {}, icon: Icon(Icons.people))
         ],
         title: Text(
-          "DashBoard",
+          "DashBoard Screen",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blueGrey,
