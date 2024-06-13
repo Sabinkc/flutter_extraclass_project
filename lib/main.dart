@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/dashboard.dart';
+import 'package:my_app/screens/profile.dart';
 
 void main(List<String> args) {
   runApp(MyApplication());

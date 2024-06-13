@@ -1,8 +1,10 @@
 import 'dart:html';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:my_app/screens/profile.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
@@ -65,11 +67,24 @@ class DashBoardScreen extends StatelessWidget {
                 ],
               ),
               Card(
-                child: ExpansionTile(
+                child: ListTile(
                   leading: Icon(Icons.home),
-                  // trailing: Icon(Icons.arrow_back_ios),
+                  trailing: Icon(Icons.arrow_back_ios),
                   title: Text("Home"),
-                  subtitle: Text("Go to home page"),
+                  onTap: () {
+                    Navigator.push(context,
+                        CupertinoPageRoute(builder: (context) {
+                      return ProfileScreen();
+                    }));
+                  },
+                ),
+              ),
+              Card(
+                child: ExpansionTile(
+                  leading: Icon(Icons.settings),
+                  // trailing: Icon(Icons.arrow_back_ios),
+                  title: Text("Settings"),
+                  subtitle: Text("Go to settings page"),
                   children: [
                     Container(
                       color: Colors.red,
@@ -78,13 +93,7 @@ class DashBoardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Card(
-                child: ListTile(
-                  leading: Icon(Icons.settings),
-                  trailing: Icon(Icons.arrow_back_ios),
-                  title: Text("Settings"),
-                ),
-              ),
+
               // Divider(
               //   height: 1,
               // ),
