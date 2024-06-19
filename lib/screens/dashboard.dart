@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:my_app/project.dart';
 import 'package:my_app/screens/profile.dart';
 
 class DashBoardScreen extends StatelessWidget {
@@ -93,81 +94,17 @@ class DashBoardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
-              // Divider(
-              //   height: 1,
-              // ),
-              // ListTile(
-              //   leading: Icon(Icons.settings),
-              //   trailing: Icon(Icons.arrow_back_ios),
-              //   title: Text("Settings"),
-              // ),
-              // Divider(
-              //   height: 1,
-              // ),
-              // ListTile(
-              //   leading: Icon(Icons.notifications),
-              //   trailing: Icon(Icons.arrow_back_ios),
-              //   title: Text("Notifications"),
-              // ),
-              // Divider(
-              //   height: 1,
-              // ),
             ],
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              transform: Matrix4.rotationZ(0.6),
-              alignment: Alignment.center,
-              child: Container(
-                  child: Text("Hello"),
-                  alignment: Alignment.center,
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      width: 3,
-                      color: Colors.purple,
-                    ),
-                  )),
-              height: 300,
-              width: 300,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      offset: Offset(10, -10),
-                      blurRadius: 8,
-                      spreadRadius: 5,
-                      blurStyle: BlurStyle.normal,
-                    ),
-                    BoxShadow(
-                      color: Colors.purple,
-                      offset: Offset(-10, 10),
-                      blurRadius: 8,
-                      spreadRadius: 5,
-                      blurStyle: BlurStyle.normal,
-                    ),
-                  ],
-                  color: Colors.red,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.elliptical(20, 50),
-                      topRight: Radius.circular(20)),
-                  border: Border.all(
-                      width: 2,
-                      color: Colors.purple,
-                      style: BorderStyle.solid)),
-            ),
-          ],
-        ),
+      body: Center(child: Text("Hello")),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (context) => Project()));
+        },
+        child: Icon(Icons.navigate_next),
       ),
     );
   }
